@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.sh
+*.png
+*.yaml
+*.tsv
