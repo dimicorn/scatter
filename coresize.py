@@ -7,5 +7,7 @@ df = pd.read_csv(
     names=['Name', 'Freq', 'Epoch', 'Sizecore', 'e_Sizecore'],
 )
 df.Epoch = pd.to_datetime(df.Epoch)
-print(df.Sizecore[df.Sizecore > 3].shape)
-print(df[df.Sizecore > 5].reset_index(drop=True))
+# print(df.Sizecore[df.Sizecore > 3].shape)
+df = df[df.Sizecore > 5]
+df = df.sort_values(by=['Sizecore'], ascending=False).reset_index(drop=True)
+# df.head(20).to_csv('top_20.csv', index=False)
